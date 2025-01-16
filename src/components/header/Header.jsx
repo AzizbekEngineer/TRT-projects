@@ -67,12 +67,12 @@ const Header = () => {
             </NavLink>
           </li>
           <li className="header__nav__item">
-            <NavLink className={"header__nav__item-link"} to={"/contact"}>
+            <NavLink className={"header__nav__item-link"} to={"/search"}>
               Контакты
             </NavLink>
           </li>
           <li className="header__nav__item">
-            <NavLink className={"header__nav__item-link"} to={"/contact"}>
+            <NavLink className={"header__nav__item-link"} to={"/single"}>
               Галарея
             </NavLink>
           </li>
