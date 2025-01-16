@@ -1,0 +1,56 @@
+.footer {
+  padding: 90px 0px;
+  background: rgba(24, 24, 24, 1);
+
+  &__nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+  }
+
+  &__list {
+    &-title {
+      font-family: Poppins;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27.41px;
+      text-align: left;
+      color: rgba(255, 255, 255, 0.9);
+      padding-bottom: 30px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    span,
+    &-link {
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 28.32px;
+      text-align: left;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  &__bottom {
+    padding-top: 80px;
+
+    &-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0px;
+    }
+
+    &-info-text {
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 21.32px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}

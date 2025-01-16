@@ -1,0 +1,156 @@
+.company {
+  &__bg {
+    background: url(../../assets/img/company-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 180px;
+  }
+
+  &__info {
+    padding: 40px 0px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+
+    &__left {
+      &-text {
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 14px;
+        text-align: left;
+        color: rgba(168, 168, 168, 0.65);
+      }
+
+      &-title {
+        font-family: Poppins;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 35.2px;
+        text-align: left;
+        color: rgba(255, 44, 44, 1);
+        padding: 20px 0px;
+      }
+
+      &-desc {
+        font-family: Poppins;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        color: rgba(0, 0, 0, 1);
+        padding-bottom: 20px;
+      }
+
+      &-texts {
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 21px;
+        text-align: left;
+        color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    &__right {
+      img {
+        width: 100%;
+      }
+    }
+
+    &__bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      &-text {
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 21px;
+        text-align: left;
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  &__swiper {
+    padding: 20px 0;
+    position: relative;
+  }
+
+  .mySwiper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    height: 400px;
+    padding-top: 70px;
+  }
+
+  &__swiper__top {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    h3 {
+      position: absolute;
+      bottom: -50px;
+      z-index: 10;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 30px;
+      text-align: left;
+      color: red;
+    }
+  }
+
+  &__swiper__card {
+    height: 300px;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .swiper-button-next {
+    color: black;
+    background: #C4C4C4;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+
+    &::after {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+
+  .swiper-button-prev {
+    color: black;
+    background: #C4C4C4;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 40px;
+    /* Yuqoriga ko'tarish */
+    left: calc(95% - 30px) !important;
+
+    &::after {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}
