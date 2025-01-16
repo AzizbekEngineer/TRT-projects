@@ -79,4 +79,21 @@
       }
     }
   }
+
+  @media (max-width: 500px) {
+    &__card {
+      padding: 20px;
+      &__top__left {
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      .vapros__card__btns-white {
+        padding: 10px !important;
+      }
+      .vapros__card__btns-red {
+        padding: 10px !important;
+      }
+    }
+  }
 }

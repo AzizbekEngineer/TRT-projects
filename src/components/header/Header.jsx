@@ -5,6 +5,8 @@ import { FiSearch } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import uzb from "../../assets/icons/uzb.webp";
 import rus from "../../assets/icons/rus.png";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { MdClose } from "react-icons/md";
 
 import "./header.scss";
 
@@ -12,6 +14,7 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const [selectedLang, setSelectedLang] = useState("uzb");
   const dropdownRef = useRef(null);
+  const [hide, setHide] = useState(false);
 
   const handleLanguageChange = (lang) => {
     setSelectedLang(lang);
@@ -44,7 +47,11 @@ const Header = () => {
         <NavLink to={"/"} className="header__nav__icons">
           <img src={icon} alt="header-icon" />
         </NavLink>
-        <ul className="header__nav__list">
+        <ul
+          className={`header__nav__list ${
+            hide ? "header__nav__list-show" : ""
+          }`}
+        >
           <li className="header__nav__item">
             <NavLink className={"header__nav__item-link"} to={"/razdel"}>
               {/* {t("O'quvchilar")} */}
@@ -118,11 +125,28 @@ const Header = () => {
             <span>Заказать обратный звонок</span>
           </li>
         </ul>
-        <div className="header__nav__search">
-          <FiSearch />
-        </div>
-        <div className="header__nav__btn">
-          <button>Оставить заявку</button>
+        <div className="header__nav__right">
+          <div className="header__nav__search">
+            <FiSearch />
+          </div>
+          <div className="header__nav__btn">
+            <button>Оставить заявку</button>
+          </div>
+          {!hide ? (
+            <button
+              onClick={() => setHide(true)}
+              className="header__nav__right-menu"
+            >
+              <RxHamburgerMenu />
+            </button>
+          ) : (
+            <button
+              onClick={() => setHide(false)}
+              className="header__nav__right-menu"
+            >
+              <MdClose />
+            </button>
+          )}
         </div>
       </nav>
     </header>
