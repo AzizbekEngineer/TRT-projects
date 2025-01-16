@@ -66,4 +66,39 @@
       }
     }
   }
+
+  @media (max-width: 1270px) {
+    &__card {
+      &__top-left {
+        img {
+          width: 40px;
+        }
+      }
+      &__top-right {
+        img {
+          width: 50px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1000px) {
+    &__cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    &__cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 420px) {
+    &__cards {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__info-title {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
 }

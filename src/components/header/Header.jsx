@@ -53,33 +53,57 @@ const Header = () => {
           }`}
         >
           <li className="header__nav__item">
-            <NavLink className={"header__nav__item-link"} to={"/razdel"}>
+            <NavLink
+              onClick={() => setHide(false)}
+              className={"header__nav__item-link"}
+              to={"/razdel"}
+            >
               {/* {t("O'quvchilar")} */}
               Каталог
             </NavLink>
           </li>
           <li className="header__nav__item">
-            <NavLink className={"header__nav__item-link"} to={"/company"}>
+            <NavLink
+              onClick={() => setHide(false)}
+              className={"header__nav__item-link"}
+              to={"/company"}
+            >
               О компании
             </NavLink>
           </li>
           <li className="header__nav__item">
-            <NavLink className={"header__nav__item-link"} to={"/partner"}>
+            <NavLink
+              onClick={() => setHide(false)}
+              className={"header__nav__item-link"}
+              to={"/partner"}
+            >
               Партнеры
             </NavLink>
           </li>
           <li className="header__nav__item">
-            <NavLink className={"header__nav__item-link"} to={"/newost"}>
+            <NavLink
+              onClick={() => setHide(false)}
+              className={"header__nav__item-link"}
+              to={"/newost"}
+            >
               Новости
             </NavLink>
           </li>
           <li className="header__nav__item">
-            <NavLink className={"header__nav__item-link"} to={"/search"}>
+            <NavLink
+              onClick={() => setHide(false)}
+              className={"header__nav__item-link"}
+              to={"/contact"}
+            >
               Контакты
             </NavLink>
           </li>
           <li className="header__nav__item">
-            <NavLink className={"header__nav__item-link"} to={"/single"}>
+            <NavLink
+              onClick={() => setHide(false)}
+              className={"header__nav__item-link"}
+              to={"/single"}
+            >
               Галарея
             </NavLink>
           </li>
