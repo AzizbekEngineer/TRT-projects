@@ -21,25 +21,25 @@ const Filter = () => {
           <label htmlFor="">
             Наименование детали
             <div className="filter__form-search">
-              <input value={"Например, опора КПП"} type="text" />
+              <input placeholder="Например, опора КПП" type="text" />
               <FiSearch />
             </div>
           </label>
           <label htmlFor="">
             TRT-код
-            <input value={"NR1001"} type="text" />
+            <input placeholder="NR1001" type="text" />
           </label>
           <label htmlFor="">
             OEM номер
-            <input value={"2875013"} type="text" />
+            <input placeholder="2875013" type="text" />
           </label>
           <label htmlFor="">
             Марка
-            <input value={"DAEWOO"} type="text" />
+            <input placeholder="DAEWOO" type="text" />
           </label>
           <label htmlFor="">
             Модель
-            <input value={"Nexia"} type="text" />
+            <input placeholder="Nexia" type="text" />
           </label>
           <button className="filter__form-btn">
             <NavLink to={"/filter"}>Найти деталь</NavLink>

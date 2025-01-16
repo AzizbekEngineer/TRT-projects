@@ -1,11 +1,13 @@
 .prinsp {
   padding: 40px 0px;
+
   &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgba(255, 44, 44, 1);
     padding-bottom: 25px;
+
     &__left-text {
       font-family: Poppins;
       font-size: 14px;
@@ -24,6 +26,7 @@
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
       color: rgba(101, 101, 101, 1);
+
       span {
         color: rgba(255, 44, 44, 1);
       }
@@ -34,17 +37,42 @@
       align-items: center;
       border-radius: 2px;
       overflow: hidden;
+
       &-white {
         padding: 20px 71px;
         border: 1px solid #aaa4;
         background-color: white;
       }
+
       &-red {
-        padding: 20px;
+        padding: 19.5px;
         background: rgba(255, 44, 44, 1);
         color: rgba(255, 255, 255, 1);
         font-weight: 500;
         border: 1px solid rgba(255, 44, 44, 1);
+      }
+    }
+  }
+
+  @media (max-width:1200px) {
+    &__top {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  }
+
+  @media (max-width:450px) {
+    &__top__left-title {
+      font-size: 26px;
+    }
+
+    &__top__right {
+      &-white {
+        padding: 20px 25px;
+      }
+
+      &-red {
+        padding: 18px;
       }
     }
   }

@@ -1,5 +1,6 @@
 .catalogCard {
   padding-top: 40px;
+
   &__box {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
@@ -67,6 +68,28 @@
         font-weight: 400;
         color: #7d7d7d;
       }
+    }
+  }
+
+  @media (max-width:1000px) {
+    &__box {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__box-info-title {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width:680px) {
+    &__box {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width:500px) {
+    &__box-item-card {
+      gap: 100px;
     }
   }
 }

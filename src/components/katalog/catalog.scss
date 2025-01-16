@@ -4,12 +4,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 90px 0px;
+
   &__info {
     display: flex;
     flex-direction: column;
     gap: 20px;
     border-bottom: 1px solid gray;
     padding-bottom: 20px;
+
     &-title {
       font-family: Poppins;
       font-size: 14px;
@@ -20,6 +22,7 @@
       text-decoration-skip-ink: none;
       color: rgba(255, 255, 255, 0.65);
     }
+
     &-text {
       font-family: Poppins;
       font-size: 32px;
@@ -29,6 +32,7 @@
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
       color: rgba(255, 255, 255, 1);
+
       span {
         color: rgba(255, 44, 44, 1);
       }
@@ -52,6 +56,7 @@
       align-items: center;
       justify-content: center;
       gap: 40px;
+
       &-right,
       &-left {
         font-family: Poppins;
@@ -65,4 +70,18 @@
       }
     }
   }
+
+  @media (max-width:680px) {
+    &__info__bottom-text {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  }
+
+  @media (max-width:500px) {
+    &__info-text {
+      font-size: 22px;
+    }
+  }
+
 }

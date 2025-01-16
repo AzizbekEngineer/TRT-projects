@@ -4,7 +4,6 @@
   background-size: cover;
   margin: 40px auto;
   padding: 70px 0px;
-  min-width: 1440px;
 
   &__top {
     display: flex;
@@ -23,6 +22,7 @@
       color: rgba(168, 168, 168, 0.65);
       padding: 10px 0px;
     }
+
     &-title {
       font-family: Poppins;
       font-size: 32px;
@@ -40,12 +40,15 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
     align-items: flex-end;
+
     label {
       display: flex;
       flex-direction: column;
       gap: 10px;
 
       input {
+        display: flex;
+        flex: 1;
         padding: 18px;
         outline: none;
         border: 1px solid #aaa4;
@@ -61,12 +64,14 @@
       border: 1px solid #aaa4;
       border-radius: 6px;
       padding: 0px 10px 0px 0px;
+
       svg {
         color: #aaa8;
         font-size: 20px;
       }
+
       input {
-        flex-grow: 1;
+        // flex-grow: 1;
         border: none !important;
         color: gray;
       }
@@ -78,6 +83,39 @@
       color: #fff;
       border: 1px solid transparent;
       border-radius: 6px;
+    }
+  }
+
+  @media (max-width:1440px) {
+    width: 100%;
+    background: #F5F5F5;
+  }
+
+  @media (max-width:1440px) {
+    &__form {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width:850px) {
+    &__top__icon {
+      img {
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
+
+  @media (max-width:540px) {
+    padding: 15px 0;
+    margin: 0;
+
+    &__form {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__top__icon {
+      display: none;
     }
   }
 }
