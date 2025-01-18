@@ -82,6 +82,33 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    &__result {
+      display: none;
+      width: 100%;
+      padding: 10px;
+    }
+
+    &__result-hide {
+      display: flex;
+    }
+
+    &__result-form {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      svg {
+        font-size: 24px;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        outline: none;
+        border: none;
+      }
+    }
   }
 
   &__nav__btn {

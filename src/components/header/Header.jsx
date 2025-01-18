@@ -7,6 +7,7 @@ import uzb from "../../assets/icons/uzb.webp";
 import rus from "../../assets/icons/rus.png";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
+import { CiSearch } from "react-icons/ci";
 
 import "./header.scss";
 
@@ -15,6 +16,7 @@ const Header = () => {
   const [selectedLang, setSelectedLang] = useState("uzb");
   const dropdownRef = useRef(null);
   const [hide, setHide] = useState(false);
+  const [hidesearch, setHideSearch] = useState(null);
 
   const handleLanguageChange = (lang) => {
     setSelectedLang(lang);
@@ -42,138 +44,156 @@ const Header = () => {
     };
   }, []);
   return (
-    <header className="header">
-      <nav className="header__nav container">
-        <NavLink to={"/"} className="header__nav__icons">
-          <img src={icon} alt="header-icon" />
-        </NavLink>
-        <ul
-          className={`header__nav__list ${
-            hide ? "header__nav__list-show" : ""
-          }`}
-        >
-          <li className="header__nav__item">
-            <NavLink
-              onClick={() => setHide(false)}
-              className={"header__nav__item-link"}
-              to={"/razdel"}
-            >
-              {/* {t("O'quvchilar")} */}
-              Каталог
-            </NavLink>
-          </li>
-          <li className="header__nav__item">
-            <NavLink
-              onClick={() => setHide(false)}
-              className={"header__nav__item-link"}
-              to={"/company"}
-            >
-              О компании
-            </NavLink>
-          </li>
-          <li className="header__nav__item">
-            <NavLink
-              onClick={() => setHide(false)}
-              className={"header__nav__item-link"}
-              to={"/partner"}
-            >
-              Партнеры
-            </NavLink>
-          </li>
-          <li className="header__nav__item">
-            <NavLink
-              onClick={() => setHide(false)}
-              className={"header__nav__item-link"}
-              to={"/newost"}
-            >
-              Новости
-            </NavLink>
-          </li>
-          <li className="header__nav__item">
-            <NavLink
-              onClick={() => setHide(false)}
-              className={"header__nav__item-link"}
-              to={"/contact"}
-            >
-              Контакты
-            </NavLink>
-          </li>
-          <li className="header__nav__item">
-            <NavLink
-              onClick={() => setHide(false)}
-              className={"header__nav__item-link"}
-              to={"/single"}
-            >
-              Галарея
-            </NavLink>
-          </li>
-          <li className="header__nav__item">
-            <div className="custom-dropdown" ref={dropdownRef}>
-              <div
-                className="custom-dropdown-selected"
-                onClick={() =>
-                  document
-                    .querySelector(".custom-dropdown-options")
-                    .classList.toggle("show")
-                }
+    <>
+      <header className="header">
+        <nav className="header__nav container">
+          <NavLink to={"/"} className="header__nav__icons">
+            <img src={icon} alt="header-icon" />
+          </NavLink>
+          <ul
+            className={`header__nav__list ${
+              hide ? "header__nav__list-show" : ""
+            }`}
+          >
+            <li className="header__nav__item">
+              <NavLink
+                onClick={() => setHide(false)}
+                className={"header__nav__item-link"}
+                to={"/razdel"}
               >
-                <img
-                  src={selectedLang === "uzb" ? uzb : rus}
-                  alt={selectedLang}
-                  className="lang-icon"
-                />
-                <span>{t(selectedLang === "uzb" ? "Uzbek" : "Rus")}</span>
-              </div>
-              <div className="custom-dropdown-options">
+                {/* {t("O'quvchilar")} */}
+                Каталог
+              </NavLink>
+            </li>
+            <li className="header__nav__item">
+              <NavLink
+                onClick={() => setHide(false)}
+                className={"header__nav__item-link"}
+                to={"/company"}
+              >
+                О компании
+              </NavLink>
+            </li>
+            <li className="header__nav__item">
+              <NavLink
+                onClick={() => setHide(false)}
+                className={"header__nav__item-link"}
+                to={"/partner"}
+              >
+                Партнеры
+              </NavLink>
+            </li>
+            <li className="header__nav__item">
+              <NavLink
+                onClick={() => setHide(false)}
+                className={"header__nav__item-link"}
+                to={"/newost"}
+              >
+                Новости
+              </NavLink>
+            </li>
+            <li className="header__nav__item">
+              <NavLink
+                onClick={() => setHide(false)}
+                className={"header__nav__item-link"}
+                to={"/contact"}
+              >
+                Контакты
+              </NavLink>
+            </li>
+            <li className="header__nav__item">
+              <NavLink
+                onClick={() => setHide(false)}
+                className={"header__nav__item-link"}
+                to={"/single"}
+              >
+                Галарея
+              </NavLink>
+            </li>
+            <li className="header__nav__item">
+              <div className="custom-dropdown" ref={dropdownRef}>
                 <div
-                  className="custom-dropdown-option"
-                  onClick={() => handleLanguageChange("uzb")}
+                  className="custom-dropdown-selected"
+                  onClick={() =>
+                    document
+                      .querySelector(".custom-dropdown-options")
+                      .classList.toggle("show")
+                  }
                 >
-                  <img src={uzb} alt="Uzbek" className="lang-icon" />
-                  {t("Uzbek")}
+                  <img
+                    src={selectedLang === "uzb" ? uzb : rus}
+                    alt={selectedLang}
+                    className="lang-icon"
+                  />
+                  <span>{t(selectedLang === "uzb" ? "Uzbek" : "Rus")}</span>
                 </div>
-                <div
-                  className="custom-dropdown-option"
-                  onClick={() => handleLanguageChange("rus")}
-                >
-                  <img src={rus} alt="Russian" className="lang-icon" />
-                  {t("Rus")}
+                <div className="custom-dropdown-options">
+                  <div
+                    className="custom-dropdown-option"
+                    onClick={() => handleLanguageChange("uzb")}
+                  >
+                    <img src={uzb} alt="Uzbek" className="lang-icon" />
+                    {t("Uzbek")}
+                  </div>
+                  <div
+                    className="custom-dropdown-option"
+                    onClick={() => handleLanguageChange("rus")}
+                  >
+                    <img src={rus} alt="Russian" className="lang-icon" />
+                    {t("Rus")}
+                  </div>
                 </div>
               </div>
+            </li>
+            <li className="header__nav__item-phone">
+              <a
+                className={"header__nav__item-tel"}
+                href="tel:+99871 203-20-30"
+              >
+                +99871 203-20-30
+              </a>
+              <span>Заказать обратный звонок</span>
+            </li>
+          </ul>
+          <div className="header__nav__right">
+            <div
+              onClick={() => setHideSearch((p) => !p)}
+              className="header__nav__search"
+            >
+              <FiSearch />
             </div>
-          </li>
-          <li className="header__nav__item-phone">
-            <a className={"header__nav__item-tel"} href="tel:+99871 203-20-30">
-              +99871 203-20-30
-            </a>
-            <span>Заказать обратный звонок</span>
-          </li>
-        </ul>
-        <div className="header__nav__right">
-          <div className="header__nav__search">
-            <FiSearch />
+            <div className="header__nav__btn">
+              <button>Оставить заявку</button>
+            </div>
+            {!hide ? (
+              <button
+                onClick={() => setHide(true)}
+                className="header__nav__right-menu"
+              >
+                <RxHamburgerMenu />
+              </button>
+            ) : (
+              <button
+                onClick={() => setHide(false)}
+                className="header__nav__right-menu"
+              >
+                <MdClose />
+              </button>
+            )}
           </div>
-          <div className="header__nav__btn">
-            <button>Оставить заявку</button>
-          </div>
-          {!hide ? (
-            <button
-              onClick={() => setHide(true)}
-              className="header__nav__right-menu"
-            >
-              <RxHamburgerMenu />
-            </button>
-          ) : (
-            <button
-              onClick={() => setHide(false)}
-              className="header__nav__right-menu"
-            >
-              <MdClose />
-            </button>
-          )}
+        </nav>
+      </header>
+      <div
+        className={`header__nav__search__result ${
+          hidesearch ? "header__nav__search__result-hide" : ""
+        }`}
+      >
+        <div className="header__nav__search__result-form container">
+          <CiSearch />
+          <input placeholder="Поиск продукции..." type="search" />
         </div>
-      </nav>
-    </header>
+      </div>
+    </>
   );
 };
 
