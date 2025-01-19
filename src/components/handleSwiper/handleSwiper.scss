@@ -104,6 +104,22 @@
             border-radius: 6px;
         }
 
+        .swiper-button {
+            top: 9%;
+            width: 30px;
+            height: 30px;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 30px;
+
+            &.prev-button {
+                right: 60px;
+            }
+        }
+
         .swiper-title {
             font-size: 14px;
         }

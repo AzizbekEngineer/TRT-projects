@@ -24,10 +24,15 @@
   &__nav__item {
     &-link {
       font-family: Poppins;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 500;
       line-height: 17px;
       color: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid transparent;
+
+      &.active {
+        border-bottom: 1px solid white;
+      }
     }
 
     &-tel {
@@ -59,6 +64,7 @@
 
   &__nav__item-phone {
     display: flex;
+    gap: 8px;
     flex-direction: column;
 
     span {
@@ -121,7 +127,9 @@
 
   &__nav__btn {
     button {
-      padding: 18px 53px;
+      width: 140px;
+      padding: 8px 16px;
+      height: 48px;
       background-color: rgba(255, 255, 255, 0.4);
       color: rgba(255, 255, 255, 1);
       border: 1px solid transparent;
@@ -152,13 +160,26 @@
     }
   }
 
-  @media (max-width: 1560px) {
+  @media (max-width: 1615px) {
+    &__nav__item-phone {
+      a {
+        font-size: 14px;
+      }
+
+    }
+
+  }
+
+  @media (max-width: 16150px) {
     &__nav__list {
       gap: 16px;
     }
 
-    &__nav__item-tel {
-      font-size: 16px;
+    &__nav__item-phone {
+      a {
+        font-size: 14px;
+      }
+
     }
 
     &__nav__btn {
@@ -171,7 +192,13 @@
     }
   }
 
-  @media (max-width: 1380px) {
+  @media (max-width: 1480px) {
+    &__nav__item-phone {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1300px) {
     &__nav__list {
       position: fixed;
       left: -100%;
@@ -182,10 +209,14 @@
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
-      padding: 20px;
+      padding: 50px 0 0 8%;
       flex-direction: column;
       transition: 0.7s;
       z-index: 1;
+    }
+
+    &__nav__item-phone {
+      display: flex;
     }
 
     &__nav__right {
