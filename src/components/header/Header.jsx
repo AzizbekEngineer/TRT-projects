@@ -75,7 +75,7 @@ const Header = () => {
                 className={"header__nav__item-link"}
                 to={"/company"}
               >
-                О компании
+                О компании 000
               </NavLink>
             </li>
             <li className="header__nav__item">

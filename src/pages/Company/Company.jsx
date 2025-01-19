@@ -6,7 +6,6 @@ import img3 from "../../assets/sertifikat/TRT.png";
 import img4 from "../../assets/sertifikat/UZAUTO.png";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import img from "../../assets/imgRedCar.jpg";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -20,6 +19,42 @@ const Company = () => {
   useEffect(() => {
     window.scroll(0, 0);
   });
+
+  const items = [
+    {
+      id: 1,
+      img: img1,
+    },
+    {
+      id: 2,
+      img: img2,
+    },
+    {
+      id: 3,
+      img: img3,
+    },
+    {
+      id: 4,
+      img: img3,
+    },
+    {
+      id: 1,
+      img: img1,
+    },
+    {
+      id: 2,
+      img: img2,
+    },
+    {
+      id: 3,
+      img: img3,
+    },
+    {
+      id: 4,
+      img: img3,
+    },
+  ];
+
   return (
     <div className="company">
       <div className="company__bg"></div>
@@ -81,67 +116,32 @@ const Company = () => {
         <Service />
         <Photo />
       </div>
-      <div className="company__swiper">
-        <div className="container">
-          <div className="company__swiper__top">
-            <h3 className="company__swiper__title">СЕРТИФИКАТЫ КОМПАНИИ</h3>
-          </div>
-          <Swiper
-            slidesPerView={4}
-            navigation={{
-              nextEl: ".company-swiper-next",
-              prevEl: ".company-swiper-prev",
-            }}
-            loop={true}
-            breakpoints={{
-              200: { slidesPerView: 1 }, // 380px va undan kichik ekranlarda 1 ta
-              650: { slidesPerView: 2 }, // 381px - 650px oralig'ida 2 ta
-              1111: { slidesPerView: 3 }, // 651px - 1111px oralig'ida 3 ta
-              1112: { slidesPerView: 4 }, // 1112px va undan kattaroq ekranlarda 4 ta
-            }}
-            spaceBetween={30}
-            pagination={{
-              clickable: true,
-              el: ".company-swiper-pagination",
-            }}
-            modules={[Pagination, Navigation, Autoplay]}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            className="company-swiper"
-          >
-            <SwiperSlide className="company-swiper__card">
-              <img src={img1} alt="Certificate 1" />
+      <div className="custom-swiper-container container">
+        <h2 className="swiper-title__name">Рекомендации</h2>
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          spaceBetween={5}
+          slidesPerView={4}
+          navigation={{ prevEl: ".prev-button", nextEl: ".next-button" }}
+          autoplay={{ delay: 3000 }}
+          loop={true}
+          breakpoints={{
+            200: { slidesPerView: 1 }, // 380px va undan kichik ekranlarda 1 ta
+            650: { slidesPerView: 2 }, // 381px - 650px oralig'ida 2 ta
+            1111: { slidesPerView: 3 }, // 651px - 1111px oralig'ida 3 ta
+            1112: { slidesPerView: 4 }, // 1112px va undan kattaroq ekranlarda 4 ta
+          }}
+        >
+          {items.map((item) => (
+            <SwiperSlide key={item.id}>
+              <div className="swiper-slide-content">
+                <img src={item.img} alt={item.title} className="swiper-image" />
+              </div>
             </SwiperSlide>
-            <SwiperSlide className="company-swiper__card">
-              <img src={img2} alt="Certificate 2" />
-            </SwiperSlide>
-            <SwiperSlide className="company-swiper__card">
-              <img src={img3} alt="Certificate 3" />
-            </SwiperSlide>
-            <SwiperSlide className="company-swiper__card">
-              <img src={img4} alt="Certificate 4" />
-            </SwiperSlide>
-            <SwiperSlide className="company-swiper__card">
-              <img src={img1} alt="Certificate 1" />
-            </SwiperSlide>
-            <SwiperSlide className="company-swiper__card">
-              <img src={img2} alt="Certificate 2" />
-            </SwiperSlide>
-            <SwiperSlide className="company-swiper__card">
-              <img src={img3} alt="Certificate 3" />
-            </SwiperSlide>
-            <SwiperSlide className="company-swiper__card">
-              <img src={img4} alt="Certificate 4" />
-            </SwiperSlide>
-          </Swiper>
-          <div className="company-swiper-pagination"></div>
-          <div className="company-swiper-buttons">
-            <button className="company-swiper-prev">←</button>
-            <button className="company-swiper-next">→</button>
-          </div>
-        </div>
+          ))}
+        </Swiper>
+        <button className="swiper-button prev-button"></button>
+        <button className="swiper-button next-button"></button>
       </div>
     </div>
   );
