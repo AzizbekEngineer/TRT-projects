@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/autoplay"; // Autoplay style
 
 import "./company.scss";
 import Service from "../../components/service/Service";
@@ -19,41 +20,6 @@ const Company = () => {
   useEffect(() => {
     window.scroll(0, 0);
   });
-
-  const items = [
-    {
-      id: 1,
-      img: img1,
-    },
-    {
-      id: 2,
-      img: img2,
-    },
-    {
-      id: 3,
-      img: img3,
-    },
-    {
-      id: 4,
-      img: img3,
-    },
-    {
-      id: 1,
-      img: img1,
-    },
-    {
-      id: 2,
-      img: img2,
-    },
-    {
-      id: 3,
-      img: img3,
-    },
-    {
-      id: 4,
-      img: img3,
-    },
-  ];
 
   return (
     <div className="company">
@@ -88,7 +54,7 @@ const Company = () => {
             </p>
           </div>
           <div className="company__info__right">
-            <img src={img} alt="" />
+            <img src={img} alt="Company Image" />
           </div>
         </div>
         <div className="company__info__bottom">
@@ -113,35 +79,65 @@ const Company = () => {
             расширить свое присутствие на новые международные рынки в будущем.
           </p>
         </div>
+
         <Service />
         <Photo />
       </div>
-      <div className="custom-swiper-container container">
-        <h2 className="swiper-title__name">Рекомендации</h2>
-        <Swiper
-          modules={[Navigation, Autoplay]}
-          spaceBetween={5}
-          slidesPerView={4}
-          navigation={{ prevEl: ".prev-button", nextEl: ".next-button" }}
-          autoplay={{ delay: 3000 }}
-          loop={true}
-          breakpoints={{
-            200: { slidesPerView: 1 }, // 380px va undan kichik ekranlarda 1 ta
-            650: { slidesPerView: 2 }, // 381px - 650px oralig'ida 2 ta
-            1111: { slidesPerView: 3 }, // 651px - 1111px oralig'ida 3 ta
-            1112: { slidesPerView: 4 }, // 1112px va undan kattaroq ekranlarda 4 ta
-          }}
-        >
-          {items.map((item) => (
-            <SwiperSlide key={item.id}>
-              <div className="swiper-slide-content">
-                <img src={item.img} alt={item.title} className="swiper-image" />
-              </div>
+      <div className="company__swiper">
+        <div className="container">
+          <h4 className="company__swiper-title">Наши Сертификаты</h4>
+          <Swiper
+            modules={[Pagination, Navigation, Autoplay]}
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            navigation
+            pagination={{ clickable: true }}
+            loop={true}
+            className="company__swiper-container"
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              480: {
+                slidesPerView: 2,
+                spaceBetween: 15,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+              },
+            }}
+          >
+            <SwiperSlide>
+              <img src={img1} alt="IQNET" className="company__swiper-img" />
             </SwiperSlide>
-          ))}
-        </Swiper>
-        <button className="swiper-button prev-button"></button>
-        <button className="swiper-button next-button"></button>
+            <SwiperSlide>
+              <img src={img2} alt="SICQ" className="company__swiper-img" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img3} alt="TRT" className="company__swiper-img" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img4} alt="UZAUTO" className="company__swiper-img" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img1} alt="IQNET" className="company__swiper-img" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img2} alt="SICQ" className="company__swiper-img" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img3} alt="TRT" className="company__swiper-img" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img4} alt="UZAUTO" className="company__swiper-img" />
+            </SwiperSlide>
+          </Swiper>
+        </div>
       </div>
     </div>
   );
