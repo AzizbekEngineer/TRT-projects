@@ -43,6 +43,10 @@ const Header = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const handleSearchClick = () => {
+    setHideSearch((prev) => !prev);
+  };
   return (
     <>
       <header className="header">
@@ -156,10 +160,7 @@ const Header = () => {
             </li>
           </ul>
           <div className="header__nav__right">
-            <div
-              onClick={() => setHideSearch((prev) => !prev)}
-              className="header__nav__search"
-            >
+            <div onClick={handleSearchClick} className="header__nav__search">
               <FiSearch />
             </div>
             <div className="header__nav__btn">
@@ -185,7 +186,7 @@ const Header = () => {
       </header>
       <div
         className={`header__nav__search__result ${
-          hidesearch ? "header__nav__search__result-hide" : ""
+          hideSearch ? "header__nav__search__result-hide" : ""
         }`}
       >
         <div className="header__nav__search__result-form container">
