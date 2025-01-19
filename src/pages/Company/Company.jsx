@@ -14,6 +14,7 @@ import "swiper/css/navigation";
 
 import "./company.scss";
 import Service from "../../components/service/Service";
+import Photo from "../../components/photo/Photo";
 
 const Company = () => {
   useEffect(() => {
@@ -78,52 +79,62 @@ const Company = () => {
           </p>
         </div>
         <Service />
-
-        <div className="company__swiper">
+        <Photo />
+      </div>
+      <div className="company__swiper">
+        <div className="container">
           <div className="company__swiper__top">
-            <h3 className="sertificat__title">СЕРТИФИКАТЫ КОМПАНИИ</h3>
-            <div className="company__buttons"></div>
+            <h3 className="company__swiper__title">СЕРТИФИКАТЫ КОМПАНИИ</h3>
           </div>
           <Swiper
             slidesPerView={4}
-            navigation={true}
+            navigation={{
+              nextEl: ".company-swiper-next",
+              prevEl: ".company-swiper-prev",
+            }}
             loop={true}
             spaceBetween={30}
             pagination={{
               clickable: true,
+              el: ".company-swiper-pagination",
             }}
             modules={[Pagination, Navigation, Autoplay]}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
             }}
-            className="mySwiper"
+            className="company-swiper"
           >
-            <SwiperSlide className="company__swiper__card">
-              <img src={img1} alt="Hero Slide 3" />
+            <SwiperSlide className="company-swiper__card">
+              <img src={img1} alt="Certificate 1" />
             </SwiperSlide>
-            <SwiperSlide className="company__swiper__card">
-              <img src={img2} alt="Hero Slide 1" />
+            <SwiperSlide className="company-swiper__card">
+              <img src={img2} alt="Certificate 2" />
             </SwiperSlide>
-            <SwiperSlide className="company__swiper__card">
-              <img src={img3} alt="Hero Slide 2" />
+            <SwiperSlide className="company-swiper__card">
+              <img src={img3} alt="Certificate 3" />
             </SwiperSlide>
-            <SwiperSlide className="company__swiper__card">
-              <img src={img4} alt="Hero Slide 3" />
+            <SwiperSlide className="company-swiper__card">
+              <img src={img4} alt="Certificate 4" />
             </SwiperSlide>
-            <SwiperSlide className="company__swiper__card">
-              <img src={img1} alt="Hero Slide 3" />
+            <SwiperSlide className="company-swiper__card">
+              <img src={img1} alt="Certificate 1" />
             </SwiperSlide>
-            <SwiperSlide className="company__swiper__card">
-              <img src={img2} alt="Hero Slide 1" />
+            <SwiperSlide className="company-swiper__card">
+              <img src={img2} alt="Certificate 2" />
             </SwiperSlide>
-            <SwiperSlide className="company__swiper__card">
-              <img src={img3} alt="Hero Slide 2" />
+            <SwiperSlide className="company-swiper__card">
+              <img src={img3} alt="Certificate 3" />
             </SwiperSlide>
-            <SwiperSlide className="company__swiper__card">
-              <img src={img4} alt="Hero Slide 3" />
+            <SwiperSlide className="company-swiper__card">
+              <img src={img4} alt="Certificate 4" />
             </SwiperSlide>
           </Swiper>
+          <div className="company-swiper-pagination"></div>
+          <div className="company-swiper-buttons">
+            <button className="company-swiper-prev">←</button>
+            <button className="company-swiper-next">→</button>
+          </div>
         </div>
       </div>
     </div>
