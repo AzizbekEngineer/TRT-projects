@@ -1,6 +1,5 @@
 .swiper {
-  <<<<<<< HEAD======= // position: relative;
-  >>>>>>>origin/ramziddin width: 100%;
+  width: 100%;
   height: calc(100vh - 80px);
   background-color: #f5f5f5;
 
@@ -18,12 +17,9 @@
 
 
   &__overlay {
-    <<<<<<< HEAD padding: calc(100vh - 55vh) 0 20px 0;
+    padding: calc(100vh - 55vh) 0 20px 0;
     width: 85%;
-    =======position: absolute;
-    top: 50%;
-    left: 10%;
-    >>>>>>>origin/ramziddin color: #fff;
+    color: #fff;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -176,14 +172,13 @@
 
   &-button-prev {
     position: sticky;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-color: #f5f5f5;
     bottom: 24px;
-    <<<<<<< HEAD left: 12%;
-    =======left: 10%;
-    >>>>>>>origin/ramziddin z-index: 70;
+    left: 12%;
+    z-index: 70;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -193,8 +188,8 @@
 
   &-button-next {
     position: sticky;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-color: #f5f5f5;
     bottom: 24px;
