@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import img from "../../assets/img/trt.png";
 import img1 from "../../assets/sertifikat/IQNET.png";
 import img2 from "../../assets/sertifikat/SICQ.png";
@@ -16,6 +16,9 @@ import "./company.scss";
 import Service from "../../components/service/Service";
 
 const Company = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  });
   return (
     <div className="company">
       <div className="company__bg"></div>

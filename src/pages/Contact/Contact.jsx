@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./contact.scss";
 import icon from "../../assets/icons/mail.svg";
 
 const Contact = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  });
   return (
     <div className="contact">
       <div className="contact__bg"></div>

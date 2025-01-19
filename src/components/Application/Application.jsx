@@ -1,8 +1,9 @@
 import React from "react";
 
-const Faqs = () => {
+const Application = () => {
   return (
     <div>
+      <h1>Применимость Application </h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
         animi, quibusdam eveniet fuga excepturi quia voluptas facere quos quam
@@ -120,4 +121,4 @@ const Faqs = () => {
   );
 };
 
-export default Faqs;
+export default Application;

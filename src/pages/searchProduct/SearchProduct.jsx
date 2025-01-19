@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CiSearch } from "react-icons/ci";
 
 import "./searchProduct.scss";
@@ -6,6 +6,9 @@ import ProductItem from "../../components/productItem/ProductItem";
 import { FILTER } from "../../static";
 
 const SearchProduct = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  });
   return (
     <div className="searchProduct">
       <div className="container">

@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CatalogCard from "../../components/catalogCard/CatalogCard";
 
 import "./razdel.scss";
 
 const Razdel = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  });
   return (
     <div className="razdel">
       <div className="razdel__bg"></div>

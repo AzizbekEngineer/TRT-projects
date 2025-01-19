@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./accardion.scss";
 
 const Accardion = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  });
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {

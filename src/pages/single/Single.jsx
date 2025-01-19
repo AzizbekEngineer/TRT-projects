@@ -9,7 +9,9 @@ import { GoStarFill } from "react-icons/go";
 import Characteristics from "../../components/Characteristics/Characteristics";
 import LoadingSingle from "../../components/loadingSingle/LoadingSingle";
 import Tabs from "../../components/Tab/Tab";
-import Faqs from "../../components/Faq/Faqs";
+import Application from "../../components/Application/Application";
+import Information from "../../components/Information/Information";
+import HandleSwiper from "../../components/handleSwiper/HandleSwiper";
 
 const Single = () => {
   //   const { id } = useParams();
@@ -19,9 +21,9 @@ const Single = () => {
 
   //   console.log(dataProducts);
 
-  //   useEffect(() => {
-  //     window.scroll(0, 0);
-  //   }, [id]);
+  useEffect(() => {
+    window.scroll(0, 0);
+  });
   //   const dataInfo = [
   //     "Yaxshi sifatli mahsulot",
   //     "Arzon va qulay narxlarda",
@@ -138,12 +140,16 @@ const Single = () => {
       <div className="tab-content">
         <div className="tab-content-text container">
           {activeTab === "reviews" && <Characteristics />}
-          {activeTab === "faqs" && <Faqs />}
+          {activeTab === "Application" && <Application />}
+          {activeTab === "Information" && <Information />}
         </div>
       </div>
       <h3 className="detail__like__title">You might also like</h3>
       <div className="top__products">
         {/* <Products data={dataProducts?.payload} /> */}
+      </div>
+      <div className="container">
+        <HandleSwiper />
       </div>
     </div>
   );

@@ -157,7 +157,7 @@ const Header = () => {
           </ul>
           <div className="header__nav__right">
             <div
-              onClick={() => setHideSearch((p) => !p)}
+              onClick={() => setHideSearch((prev) => !prev)}
               className="header__nav__search"
             >
               <FiSearch />

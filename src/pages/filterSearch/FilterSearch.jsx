@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Filter from "../../components/filter/Filter";
 import "./filterSearch.scss";
 import ProductItem from "../../components/productItem/ProductItem";
 import { FILTER } from "../../static";
 
 const FilterSearch = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  });
   return (
     <div className="filterSearch">
       <div className="filterSearch-bg"></div>

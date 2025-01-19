@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./labaratory.scss";
 import { NEWS } from "../../static";
 
 const Labaratory = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  });
   const labaratoryData = NEWS?.slice(0, 5)?.map((el) => (
     <div className="labaratory__card">
       <div className="labaratory__card-img">

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./newost.scss";
 import { NEWS } from "../../static";
 
 const Newost = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  });
   const newsData = NEWS?.map((el) => (
     <div key={el?.id} className="newost__card">
       <div className="newost__card__img">
