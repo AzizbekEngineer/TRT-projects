@@ -72,8 +72,14 @@ const Hero = () => {
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className="swiper__slide">
-                <img src={slide.image} alt={`Slide ${index + 1}`} />
+              <div
+                className="swiper__slide "
+                style={{
+                  background: `url(${slide.image})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                }}
+              >
                 <div className="swiper__overlay container">
                   <div className="swiper__overlay__left">
                     <p className="swiper__overlay__left-text">АВТОЗАПЧАСТИ</p>
