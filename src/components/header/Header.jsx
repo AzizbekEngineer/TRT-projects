@@ -105,7 +105,7 @@ const Header = () => {
               <NavLink
                 onClick={() => setHide(false)}
                 className={"header__nav__item-link"}
-                to={"/single"}
+                to={"/accardion"}
               >
                 Галарея
               </NavLink>
