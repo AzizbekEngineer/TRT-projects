@@ -24,7 +24,7 @@
   &__nav__item {
     &-link {
       font-family: Poppins;
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 500;
       line-height: 17px;
       color: rgba(255, 255, 255, 0.9);
@@ -161,18 +161,8 @@
   }
 
   @media (max-width: 1615px) {
-    &__nav__item-phone {
-      a {
-        font-size: 14px;
-      }
-
-    }
-
-  }
-
-  @media (max-width: 16150px) {
     &__nav__list {
-      gap: 16px;
+      gap: 18px;
     }
 
     &__nav__item-phone {
@@ -192,7 +182,7 @@
     }
   }
 
-  @media (max-width: 1480px) {
+  @media (max-width: 1500px) {
     &__nav__item-phone {
       display: none;
     }
