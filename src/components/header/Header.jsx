@@ -16,7 +16,7 @@ const Header = () => {
   const [selectedLang, setSelectedLang] = useState("uzb");
   const dropdownRef = useRef(null);
   const [hide, setHide] = useState(false);
-  const [hidesearch, setHideSearch] = useState(null);
+  const [hideSearch, setHideSearch] = useState(null);
 
   const handleLanguageChange = (lang) => {
     setSelectedLang(lang);
@@ -43,6 +43,10 @@ const Header = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const handleSearchClick = () => {
+    setHideSearch((prev) => !prev);
+  };
   return (
     <>
       <header className="header">
@@ -61,8 +65,7 @@ const Header = () => {
                 className={"header__nav__item-link"}
                 to={"/razdel"}
               >
-                {/* {t("O'quvchilar")} */}
-                Каталог
+                {t("header.Katalog")}
               </NavLink>
             </li>
             <li className="header__nav__item">
@@ -71,7 +74,7 @@ const Header = () => {
                 className={"header__nav__item-link"}
                 to={"/company"}
               >
-                О компании
+                {t("header.Kompaniya")}
               </NavLink>
             </li>
             <li className="header__nav__item">
@@ -80,7 +83,7 @@ const Header = () => {
                 className={"header__nav__item-link"}
                 to={"/partner"}
               >
-                Партнеры
+                {t("header.Hamkorlar")}
               </NavLink>
             </li>
             <li className="header__nav__item">
@@ -89,7 +92,7 @@ const Header = () => {
                 className={"header__nav__item-link"}
                 to={"/newost"}
               >
-                Новости
+                {t("header.Yangiliklar")}
               </NavLink>
             </li>
             <li className="header__nav__item">
@@ -98,7 +101,7 @@ const Header = () => {
                 className={"header__nav__item-link"}
                 to={"/contact"}
               >
-                Контакты
+                {t("header.Kontaktlar")}
               </NavLink>
             </li>
             <li className="header__nav__item">
@@ -107,7 +110,7 @@ const Header = () => {
                 className={"header__nav__item-link"}
                 to={"/accardion"}
               >
-                Галарея
+                {t("header.Galereya")}
               </NavLink>
             </li>
             <li className="header__nav__item">
@@ -152,18 +155,15 @@ const Header = () => {
               >
                 +99871 203-20-30
               </a>
-              <span>Заказать обратный звонок</span>
+              <span> {t("header.Call")}</span>
             </li>
           </ul>
           <div className="header__nav__right">
-            <div
-              onClick={() => setHideSearch((prev) => !prev)}
-              className="header__nav__search"
-            >
+            <div onClick={handleSearchClick} className="header__nav__search">
               <FiSearch />
             </div>
             <div className="header__nav__btn">
-              <button>Оставить заявку</button>
+              <button> {t("header.Request")}</button>
             </div>
             {!hide ? (
               <button
@@ -185,7 +185,7 @@ const Header = () => {
       </header>
       <div
         className={`header__nav__search__result ${
-          hidesearch ? "header__nav__search__result-hide" : ""
+          hideSearch ? "header__nav__search__result-hide" : ""
         }`}
       >
         <div className="header__nav__search__result-form container">

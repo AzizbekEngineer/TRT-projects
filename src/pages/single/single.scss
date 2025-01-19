@@ -3,6 +3,7 @@
   display: flex;
   justify-content: flex-start;
   gap: 30px;
+  flex-wrap: wrap;
   margin-bottom: 10px;
 
   button {
@@ -228,8 +229,21 @@
       grid-template-columns: 1fr;
     }
 
+    .tabs {
+      gap: 15px;
+
+      button {
+        font-size: 16px;
+      }
+    }
+
     &__img {
       order: 1;
+    }
+
+    &__like__title {
+      font-size: 28px;
+      padding: 10px 0;
     }
 
     &__card__imgs {
