@@ -1,10 +1,12 @@
 import React from "react";
 import img from "../../assets/img/trt.png";
-import img1 from "../../assets/img/compony1.png";
-import img2 from "../../assets/img/compony2.png";
-import img3 from "../../assets/img/compony3.png";
+import img1 from "../../assets/sertifikat/IQNET.png";
+import img2 from "../../assets/sertifikat/SICQ.png";
+import img3 from "../../assets/sertifikat/TRT.png";
+import img4 from "../../assets/sertifikat/UZAUTO.png";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+// import img from "../../assets/imgRedCar.jpg";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -95,28 +97,28 @@ const Company = () => {
             className="mySwiper"
           >
             <SwiperSlide className="company__swiper__card">
-              <img src={img} alt="Hero Slide 3" />
+              <img src={img1} alt="Hero Slide 3" />
             </SwiperSlide>
             <SwiperSlide className="company__swiper__card">
-              <img src={img1} alt="Hero Slide 1" />
+              <img src={img2} alt="Hero Slide 1" />
             </SwiperSlide>
             <SwiperSlide className="company__swiper__card">
-              <img src={img2} alt="Hero Slide 2" />
+              <img src={img3} alt="Hero Slide 2" />
             </SwiperSlide>
             <SwiperSlide className="company__swiper__card">
-              <img src={img3} alt="Hero Slide 3" />
+              <img src={img4} alt="Hero Slide 3" />
             </SwiperSlide>
             <SwiperSlide className="company__swiper__card">
-              <img src={img} alt="Hero Slide 3" />
+              <img src={img1} alt="Hero Slide 3" />
             </SwiperSlide>
             <SwiperSlide className="company__swiper__card">
-              <img src={img1} alt="Hero Slide 1" />
+              <img src={img2} alt="Hero Slide 1" />
             </SwiperSlide>
             <SwiperSlide className="company__swiper__card">
-              <img width={350} height={300} src={img2} alt="Hero Slide 2" />
+              <img src={img3} alt="Hero Slide 2" />
             </SwiperSlide>
             <SwiperSlide className="company__swiper__card">
-              <img width={350} height={300} src={img3} alt="Hero Slide 3" />
+              <img src={img4} alt="Hero Slide 3" />
             </SwiperSlide>
           </Swiper>
         </div>

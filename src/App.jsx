@@ -1,5 +1,6 @@
 import React, { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
+import Labaratory from "./pages/labaratory/Labaratory";
 const Home = lazy(() => import("./pages/home/Home"));
 const Company = lazy(() => import("./pages/Company/Company"));
 const Partner = lazy(() => import("./pages/partner/Partner"));
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/result" element={<Result />} />
         <Route path="/accardion" element={<Accardion />} />
         <Route path="/search" element={<SearchProduct />} />
+        <Route path="/labaratory" element={<Labaratory />} />
       </Routes>
       <Footer />
     </>

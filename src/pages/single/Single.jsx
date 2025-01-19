@@ -136,7 +136,7 @@ const Single = () => {
       </div>
       <Tabs activeTab={activeTab} onTabClick={setActiveTab} />
       <div className="tab-content">
-        <div className="container">
+        <div className="tab-content-text container">
           {activeTab === "reviews" && <Characteristics />}
           {activeTab === "faqs" && <Faqs />}
         </div>
