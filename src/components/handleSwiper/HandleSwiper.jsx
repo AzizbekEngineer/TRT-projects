@@ -71,10 +71,10 @@ const HandleSwiper = () => {
         autoplay={{ delay: 3000 }}
         loop={true}
         breakpoints={{
-          200: { slidesPerView: 1 }, // 380px va undan kichik ekranlarda 1 ta
-          650: { slidesPerView: 2 }, // 381px - 650px oralig'ida 2 ta
-          1111: { slidesPerView: 3 }, // 651px - 1111px oralig'ida 3 ta
-          1112: { slidesPerView: 4 }, // 1112px va undan kattaroq ekranlarda 4 ta
+          200: { slidesPerView: 1 },
+          650: { slidesPerView: 2 },
+          1111: { slidesPerView: 3 },
+          1112: { slidesPerView: 4 },
         }}
       >
         {items.map((item) => (

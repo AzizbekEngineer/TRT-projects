@@ -124,7 +124,7 @@ const Header = () => {
                   }
                 >
                   <img
-                    src={selectedLang === "uzb" ? uzb : rus}
+                    src={selectedLang === "rus" ? rus : uzb}
                     alt={selectedLang}
                     className="lang-icon"
                   />
@@ -133,17 +133,17 @@ const Header = () => {
                 <div className="custom-dropdown-options">
                   <div
                     className="custom-dropdown-option"
-                    onClick={() => handleLanguageChange("uzb")}
-                  >
-                    <img src={uzb} alt="Uzbek" className="lang-icon" />
-                    {t("Uzbek")}
-                  </div>
-                  <div
-                    className="custom-dropdown-option"
                     onClick={() => handleLanguageChange("rus")}
                   >
                     <img src={rus} alt="Russian" className="lang-icon" />
                     {t("Rus")}
+                  </div>
+                  <div
+                    className="custom-dropdown-option"
+                    onClick={() => handleLanguageChange("uzb")}
+                  >
+                    <img src={uzb} alt="Uzbek" className="lang-icon" />
+                    {t("Uzbek")}
                   </div>
                 </div>
               </div>
