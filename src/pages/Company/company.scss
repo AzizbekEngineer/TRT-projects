@@ -100,11 +100,13 @@
 
     .company-swiper {
       padding: 20px 0;
+      height: 450px;
 
       &__card {
         img {
           margin: 0 !important;
           padding: 0 !important;
+          height: 100%;
           width: 100%;
           border: 2px solid #ddd;
           border-radius: 10px;
@@ -118,11 +120,11 @@
       text-align: center;
 
       .swiper-pagination-bullet {
-        background: #000;
+        background: #aaa9;
         opacity: 0.7;
 
         &.swiper-pagination-bullet-active {
-          background: red;
+          background: black;
           opacity: 1;
         }
       }
